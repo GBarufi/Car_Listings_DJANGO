@@ -1,0 +1,16 @@
+{
+    success: true,
+    total: {{anuncios.count}},
+    data: [
+        {% for carro in anuncios %}
+        {    
+        manufacturer: "{{carro.fabricante}}",
+        model: "{{carro.modelo}}",
+        price: "{{carro.preco}}",
+        wiki: "{{carro.wiki}}",
+        img: "{{carro.album}}",
+        quality : [{name: 'overall', rating:{{carro.notaMediaGeral}}},{name: 'mechanical', rating: {{carro.notaMecanica}}},{name: 'powertrain', rating: {{carro.notaTorque}}},{name: 'body', rating: {{carro.notaLataria}}},{name: 'interior', rating:{{carro.notaInterior}}},{name: 'accessories', rating:{{carro.notaAcessorios}}}]
+        },
+        {% endfor%}
+    ]
+}
